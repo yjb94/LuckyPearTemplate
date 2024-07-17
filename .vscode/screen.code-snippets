@@ -1,0 +1,24 @@
+{
+  "react-native-navigation-screen": {
+    "prefix": "rnscreen",
+    "body": [
+      "import React from 'react';",
+      "import { RootStackScreenProps } from 'screens';",
+      "import Text from 'atoms/Text';",
+      "import View from 'atoms/View';",
+      "",
+      "export type ${0:$TM_FILENAME_BASE}Props = undefined;",
+      "",
+      "const ${0:$TM_FILENAME_BASE}: React.FC<RootStackScreenProps<'${1:$TM_FILENAME_BASE}'>> = () => {",
+      "  return (",
+      "    <View>",
+      "      <Text>${0:$TM_FILENAME_BASE}</Text>",
+      "    </View>",
+      "  );",
+      "}",
+      "",
+      "export default ${0:$TM_FILENAME_BASE}"
+    ],
+    "description": "Generate react native screen"
+  }
+}
