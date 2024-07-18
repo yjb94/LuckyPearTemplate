@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'shared/ui';
-import { state } from './Counter';
+import { counterStore } from '../model';
 
 export type IncreaseButtonProps = {};
 
 const IncreaseButton: React.FC<IncreaseButtonProps> = () => {
-  // const [_, setCount] = useState(0);
-
   const increaseCount = () => {
-    state.count += 1;
-    // setCount(prev => prev + 1);
+    counterStore.count += 1;
   };
 
   return (
