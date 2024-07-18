@@ -1,7 +1,6 @@
 import React from 'react';
 import { RootStackScreenProps } from 'screens';
-import Text from 'atoms/Text';
-import View from 'atoms/View';
+import { Text, View } from 'shared/ui';
 
 export type HomeScreenProps = undefined;
 

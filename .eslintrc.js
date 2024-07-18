@@ -1,4 +1,5 @@
 module.exports = {
+  // TODO: fsd like linting
   root: true,
   extends: ['@react-native'],
   parser: '@typescript-eslint/parser',
