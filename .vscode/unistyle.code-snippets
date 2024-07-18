@@ -1,0 +1,29 @@
+{
+  "unistyleStyleSheet": {
+    "prefix": "usrfc",
+    "body": [
+      "import React from 'react';",
+      "import { createStyleSheet, useStyles } from 'react-native-unistyles';",
+      "import { View } from 'shared/ui';",
+      "",
+      "export type ${0:$TM_FILENAME_BASE}Props = {};",
+      "",
+      "const ${0:$TM_FILENAME_BASE}: React.FC<${0:$TM_FILENAME_BASE}Props> = () => {",
+      "  const { styles } = useStyles(stylesheet);",
+      "",
+      "  return (",
+      "    <View style={styles.container}>",
+      "    </View>",
+      "  );",
+      "}",
+      "",
+      "const stylesheet = createStyleSheet(() => ({",
+      "  container: {",
+      "  },",
+      "}));",
+      "",
+      "export default ${0:$TM_FILENAME_BASE}"
+    ],
+    "description": "Generate unistyle style sheet"
+  }
+}

@@ -4,8 +4,7 @@
     "body": [
       "import React from 'react';",
       "import { RootStackScreenProps } from 'screens';",
-      "import Text from 'atoms/Text';",
-      "import View from 'atoms/View';",
+      "import { View } from 'shared/ui';",
       "",
       "export type ${0:$TM_FILENAME_BASE}Props = undefined;",
       "",

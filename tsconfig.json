@@ -1,6 +1,14 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
+  "parser": "@typescript-eslint/parser",
   "compilerOptions": {
     "baseUrl": "./src"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }
