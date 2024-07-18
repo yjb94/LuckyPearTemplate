@@ -23,5 +23,11 @@ module.exports = {
       'asc',
       { ignoreClassNames: false, ignoreStyleProperties: false },
     ],
+    'import/no-internal-modules': [
+      'error',
+      {
+        allow: ['**/ui/*', 'app/*', 'screens/*', 'entities/*', 'shared/*'],
+      },
+    ],
   },
 };
