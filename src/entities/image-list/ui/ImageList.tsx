@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
-import { List, ThumbImage } from 'shared/ui';
+import { List, Text, ThumbImage } from 'shared/ui';
 import { ListProps } from 'shared/ui/List';
 import { useImageListQuery } from '../model';
 
@@ -9,22 +9,33 @@ export type ImageListProps = {};
 const ImageList: React.FC<ImageListProps> = () => {
   const { styles } = useStyles(stylesheet);
 
-  const { data } = useImageListQuery();
+  const { data, hasNextPage, fetchNextPage } = useImageListQuery();
+  const images = data?.pages.flat();
+
+  const handleEndReached = () => {
+    if (hasNextPage) {
+      fetchNextPage();
+    }
+  };
 
   const renderItem: ListProps<ImageType>['renderItem'] = ({ item }) => {
     return (
-      <ThumbImage
-        thumbhash={item.thumbhash}
-        source={{ uri: item.uri }}
-        style={styles.image}
-      />
+      <>
+        <Text>{item.id}</Text>
+        <ThumbImage
+          thumbhash={item.thumbhash}
+          source={{ uri: item.uri }}
+          style={styles.image}
+        />
+      </>
     );
   };
 
   return (
     <List
-      data={data}
+      data={images}
       renderItem={renderItem}
+      onEndReached={handleEndReached}
     />
   );
 };
