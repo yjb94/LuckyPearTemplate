@@ -6,7 +6,6 @@ import Image, { ImageProps } from './Image';
 
 export type ThumbImageProps = ImageProps & {
   thumbhash?: string;
-  onEncode?: (thumbhash: string) => void;
 };
 
 const ThumbImage: React.FC<ThumbImageProps> = ({
