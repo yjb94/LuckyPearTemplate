@@ -1,0 +1,3 @@
+type ImageType = {
+  uri: string;
+};
