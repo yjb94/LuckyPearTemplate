@@ -2,6 +2,7 @@ import { Thumbhash } from '@luckypear/react-native-thumbhash';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import View from '../View';
 import Image, { ImageProps } from './Image';
 
 export type ThumbImageProps = ImageProps & {
@@ -24,7 +25,7 @@ const ThumbImage: React.FC<ThumbImageProps> = ({
   const composedStyle = StyleSheet.compose(styles.absoulte, style);
 
   return (
-    <>
+    <View>
       {!!thumbhash && !isLoaded && (
         <Thumbhash
           thumbhash={thumbhash}
@@ -32,12 +33,12 @@ const ThumbImage: React.FC<ThumbImageProps> = ({
         />
       )}
       <Image
-        style={[style]}
         source={source}
+        style={style}
         onLoadEnd={handleLoadEnd}
         {...otherProps}
       />
-    </>
+    </View>
   );
 };
 
