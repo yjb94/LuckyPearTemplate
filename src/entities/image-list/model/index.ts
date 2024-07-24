@@ -1,3 +1,3 @@
-import { useImageList } from './useImageList';
+import { useImageListQuery } from './useImageListQuery';
 
-export { useImageList };
+export { useImageListQuery };

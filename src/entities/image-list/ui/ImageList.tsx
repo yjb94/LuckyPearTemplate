@@ -1,32 +1,36 @@
 import React from 'react';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
-import { Image, List } from 'shared/ui';
+import { List, ThumbImage } from 'shared/ui';
 import { ListProps } from 'shared/ui/List';
-import { useImageList } from '../model';
+import { setThumbhash } from '../api';
+import { useImageListQuery } from '../model';
 
 export type ImageListProps = {};
 
 const ImageList: React.FC<ImageListProps> = () => {
   const { styles } = useStyles(stylesheet);
 
-  const images: ImageType[] = useImageList();
-
-  const keyExtractor: ListProps<ImageType>['keyExtractor'] = item => item.uri;
+  const { data } = useImageListQuery();
 
   const renderItem: ListProps<ImageType>['renderItem'] = ({ item }) => {
+    const handleEncode = (thumbhash: string) => {
+      setThumbhash(item, thumbhash);
+    };
+
     return (
-      <Image
+      <ThumbImage
+        thumbhash={item.thumbhash}
         source={{ uri: item.uri }}
         style={styles.image}
+        onEncode={handleEncode}
       />
     );
   };
 
   return (
     <List
-      data={images}
+      data={data}
       renderItem={renderItem}
-      keyExtractor={keyExtractor}
     />
   );
 };
