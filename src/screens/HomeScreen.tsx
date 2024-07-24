@@ -1,6 +1,6 @@
 import React from 'react';
 import { RootStackScreenProps } from 'screens';
-import { Counter } from 'entities/counter';
+import { ImageList } from 'entities/image-list';
 import { View } from 'shared/ui';
 
 export type HomeScreenProps = undefined;
@@ -8,7 +8,7 @@ export type HomeScreenProps = undefined;
 const HomeScreen: React.FC<RootStackScreenProps<'Home'>> = () => {
   return (
     <View>
-      <Counter />
+      <ImageList />
     </View>
   );
 };
