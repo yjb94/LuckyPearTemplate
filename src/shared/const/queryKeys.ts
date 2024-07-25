@@ -1,6 +1,6 @@
 export const imagesQuery = {
   all: ['images'],
   lists: () => [...imagesQuery.all, 'list'] as const,
-  // FIXME: change params
-  list: (params: any) => [...imagesQuery.all, 'list', params] as const,
+  list: () => [...imagesQuery.lists()] as const,
+  detail: (id: string) => [...imagesQuery.all, 'detail', id] as const,
 };

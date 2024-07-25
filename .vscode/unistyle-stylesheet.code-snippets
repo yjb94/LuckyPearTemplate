@@ -1,0 +1,12 @@
+{
+  "unistyleStyleSheet": {
+    "prefix": "stylesheet",
+    "body": [
+      "const stylesheet = createStyleSheet(() => ({",
+      "  container: {",
+      "  },",
+      "}));"
+    ],
+    "description": "Generate unistyle style sheet"
+  }
+}

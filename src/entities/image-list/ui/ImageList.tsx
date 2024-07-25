@@ -1,14 +1,12 @@
 import React from 'react';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
-import { List, Text, ThumbImage } from 'shared/ui';
+import { List } from 'shared/ui';
 import { ListProps } from 'shared/ui/List';
 import { useImageListQuery } from '../model';
+import ImageListItem from './ImageListItem';
 
 export type ImageListProps = {};
 
 const ImageList: React.FC<ImageListProps> = () => {
-  const { styles } = useStyles(stylesheet);
-
   const { data, hasNextPage, fetchNextPage } = useImageListQuery();
   const images = data?.pages.flat();
 
@@ -19,16 +17,7 @@ const ImageList: React.FC<ImageListProps> = () => {
   };
 
   const renderItem: ListProps<ImageType>['renderItem'] = ({ item }) => {
-    return (
-      <>
-        <Text>{item.id}</Text>
-        <ThumbImage
-          thumbhash={item.thumbhash}
-          source={{ uri: item.uri }}
-          style={styles.image}
-        />
-      </>
-    );
+    return <ImageListItem {...item} />;
   };
 
   return (
@@ -39,12 +28,5 @@ const ImageList: React.FC<ImageListProps> = () => {
     />
   );
 };
-
-const stylesheet = createStyleSheet({
-  image: {
-    height: 100,
-    width: 100,
-  },
-});
 
 export default ImageList;

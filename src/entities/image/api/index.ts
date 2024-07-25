@@ -1,0 +1,1 @@
+export { fetchImageById } from './fetchImage';
